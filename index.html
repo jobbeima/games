@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match</title>
+    <meta name="description" content="A fast color-matching game you can play in the browser.">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="game-card">
+            <header class="header">
+                <div class="score-block">
+                    <p class="label">Score</p>
+                    <p class="value" id="score">0</p>
+                </div>
+                <div class="title-block">
+                    <p class="eyebrow">Browser Edition</p>
+                    <h1>Color Match</h1>
+                </div>
+                <div class="score-block align-right">
+                    <p class="label">High Score</p>
+                    <p class="value" id="high-score">0</p>
+                </div>
+            </header>
+
+            <section class="timer-panel" aria-label="Timer">
+                <div class="timer-copy">
+                    <span>Time</span>
+                    <span id="time-remaining">60s</span>
+                </div>
+                <div class="timer-track" aria-hidden="true">
+                    <div class="timer-fill" id="timer-fill"></div>
+                </div>
+            </section>
+
+            <section class="round-panel" id="active-game">
+                <p class="round" id="round-label">Round 1</p>
+                <p class="instructions">Tap the word whose color matches its meaning.</p>
+                <div class="choices" id="choices"></div>
+            </section>
+
+            <section class="game-over hidden" id="game-over" aria-live="polite">
+                <p class="game-over-title">Time's up!</p>
+                <p class="game-over-score" id="final-score">Final score: 0</p>
+                <p class="game-over-badge hidden" id="new-high-score">New High Score</p>
+                <button class="primary-button" id="play-again" type="button">Play Again</button>
+            </section>
+        </section>
+
+        <div class="feedback hidden" id="feedback" aria-hidden="true"></div>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
